@@ -21,24 +21,30 @@ intervals[i].length == 2
 
 int main()
 {
-    int num_of_intervals, new_num_of_intervals;
+    int num_of_intervals;
     printf("How many intervals will be given: ");
-    scanf("%d", &num_of_intervals);
+    while ((scanf("%d", &num_of_intervals) != 1) || num_of_intervals < 0)
+    {
+        printf("Invalid input: Please enter a positive integer: "); // Making sure input is valid 
+        while (getchar() != '\n');  // Clear input buffer 
+    }
 
     int intervals[num_of_intervals][2];
 
-    for (int i = 0; i < num_of_intervals; i++)
+    for (int i = 0; i < num_of_intervals; i++)  // Taking user input 
     {
         int x1, x2;
         if (i == 0)
-            printf("Enter first interval (Format [x,y]): ");
+            printf("Enter first interval (Format [x,y]): ");   
+        else if (i == num_of_intervals - 1)
+            printf("Enter last interval (Format [x,y]): ");
         else
             printf("Enter next interval (Format [x,y]): ");
 
         while (getchar() != '\n');  // Clear input buffer 
         while (scanf(" [%d,%d]", &x1, &x2) != 2) 
         {
-            printf("Invalid input. Please enter an interval with the specified format: ");
+            printf("Invalid input: Please enter an interval with the specified format: ");  // Making sure input is valid
             while (getchar() != '\n');  // Clear input buffer 
         }
         intervals[i][0] = x1;
@@ -46,17 +52,24 @@ int main()
     }
     
     // Merging intervals
-    int counter = 0;
     for (int i = 0; i < num_of_intervals - 1; i++) {
-        if (intervals[i][1] >= intervals[i + 1][0]) {
+        if (intervals[i][1] >= intervals[i + 1][0] && intervals[i + 1][0] >= intervals[i][0]
+            && intervals[i + 1][1] >= intervals[i][1]) {
             intervals[i + 1][0] = intervals[i][0];
             intervals[i][0] = 10101;
-            counter++;
         }
-        if (intervals[i][1] >= intervals[i + 1][1]) {
+        if (intervals[i][1] >= intervals[i + 1][1] && intervals[i + 1][1] >= intervals[i][0]
+            && intervals[i + 1][0] <= intervals[i][0]) {
             intervals[i + 1][1] = intervals[i][1];
             intervals[i][0] = 10101;
-            counter++;
+        }
+        if (intervals[i][0] <= intervals[i + 1][0] && intervals[i + 1][1] <= intervals[i][1]) {
+            intervals[i + 1][0] = intervals[i][0];
+            intervals[i + 1][1] = intervals[i][1];
+            intervals[i][0] = 10101; 
+        }
+        if (intervals[i][0] >= intervals[i + 1][0] && intervals[i + 1][1] >= intervals[i][1]) {
+            intervals[i][0] = 10101; 
         }
     }
     
