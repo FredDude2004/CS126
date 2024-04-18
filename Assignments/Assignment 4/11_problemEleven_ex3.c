@@ -28,13 +28,13 @@ int main()
     
     strcpy(s1.stn, "lynn"); // use struct_name.member
     
-    s1.dir = ’i’; // when using name of struct
+    s1.dir = 'i'; // when using name of struct
     s1.when.hr = 9;
     s1.when.mn = 23;
     
     strcpy(p2->stn, "salem"); // use struct_ptr->member
     
-    p2->dir = ’i’; // when using ptr to struct
+    p2->dir = 'i'; // when using ptr to struct
     p2->when.hr = 9;
     p2->when.mn = 12;
     
@@ -52,3 +52,18 @@ void print_event(struct tstop *p)
     printf(" dir: %c\n", p->dir);
     printf(" when: %d:%d\n", p->when.hr, p->when.mn);
 }
+
+/*  This program simulates train stop events. It defines structures to represent a train 
+    stop with details like station name, direction, and time. Then, it uses pointers to these 
+    structures to set and print out information about two train stops, demonstrating how to work 
+    with structures and pointers in C.  
+
+    For Struct "What can we do? Take addresses, compare, assign, select members pass to functions 
+    by reference" please answer this question for ex3.c
+    
+    1. Take addresses: You can find out where a struct is stored in memory.
+    2. Compare: You can check if two structs are the same or different.
+    3. Assign: You can copy the contents of one struct into another.
+    4. Select members: You can choose specific parts of a struct.
+    5. Pass to functions by reference: You can let a function work directly with a struct, changing 
+       its contents if needed.  */

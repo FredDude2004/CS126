@@ -21,10 +21,14 @@ int main()
 
     if ( *p == *q ) /* same as if ( i == j ) */
     {
-        *cp = ’t’ ; /* same as c = ’t’; */
+        *cp = 't' ; /* same as c = ’t’; */
         /* now to print them out */
         printf("i=%d, j=%d, c=%c\n", i,j,c);
         printf("locations are:\n");
         printf("i at %p, j at %p, c at %p\n", p, q, cp);
     }
 }
+/*
+    This code showcases the concept of pointers in C, specifically
+    how they can be used to indirectly access and manipulate variables.
+*/

@@ -5,11 +5,10 @@
 
 int main()
 {
-    char
-    char
+    // removed random data types
 
-    m[10] = "hello";
-    n[] = "how are you?";
+    char m[10] = "hello";   // added the 'char' data type to properly declare the variables
+    char n[] = "how are you?";
 
     char *p, *q;
 
@@ -29,10 +28,15 @@ int main()
     {
         printf("addresses differ\n");
         printf("the char at m is %c\n", *m);
-        printf("the string at m is %s\n", m);
-        printf("the address of m is %lu\n", (unsigned long) m); 
-        printf("the address of n is %lu\n", (unsigned long) n);     
+        printf("the string at m is %s\n", m);           // Changed format specifiers to %s
+        printf("the address of m is %p\n", (void *)m);  // Changed format specifiers to %s
+        printf("the address of n is %p\n", (void *)n);  // Changed format specifiers to %p
     }
 
     return 0;
 }
+
+/*  pointers to arrays can be used to compare the values and addresses of arrays. By assigning the 
+    addresses of the first elements of m and n to pointers p and q, the program shows we can access 
+    array elements and compare their values using pointers Also, comparing the addresses stored in 
+    p and q shows how pointers can hold memory addresses and compare addresses.  */

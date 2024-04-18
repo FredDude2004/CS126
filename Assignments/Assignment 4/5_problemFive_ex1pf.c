@@ -23,7 +23,7 @@ int main()
 
     if ( *p == *q ) 
     {
-        c = ’t’;
+        c = 't';
     }
     
     compare(p, q);
@@ -47,3 +47,10 @@ void display(int *ip, char *cp)
     printf("values are: %d %c\n", *ip, *cp);
     printf("addrs are %p %p\n", ip, cp);
 }
+/*
+    So, when executed, the code sets up some variables and pointers, 
+    performs comparisons and displays values and addresses through function calls.
+*/
+
+
+

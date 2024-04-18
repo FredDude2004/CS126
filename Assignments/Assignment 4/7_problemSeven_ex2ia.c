@@ -6,7 +6,7 @@
 int main()
 {
     char m[10] = "hello";
-    char n[] = "how are you?";
+    char n[20] = "how are you?"; // declared the array to have extra space for modification
     char *p, *q;
 
     p = &m[0]; /* OR p = m */
@@ -18,3 +18,13 @@ int main()
 
     printf("string at n is %s\n", q);
 }
+
+/*  This program initializes two character arrays, assigns the address of their first 
+    elements to pointers, prints specific characters of one array, modifies a character in 
+    the second array, and then prints the modified string.  
+    
+    What can we do with pointers to arrays?
+    Pointers to arrays allow us grab specific parts of arrays 
+    using with pointers, like p[2] gets the third letter of array m. Also, 
+    they let us change what's inside arrays without directly touching them (like *q = p[2] 
+    changes what's in array n). */

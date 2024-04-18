@@ -33,3 +33,14 @@ int main()
     printf(" i at %lu, j at %lu, c at %lu\n", (ul)p, (ul)q, (ul)cp);
     printf(" p at %lu, q at %lu, cp at %lu\n", &p, &q, &cp);
 }
+/*
+    This program declares several variables of different types (int, char, and float),
+    along with pointers to these types. It then assigns values to some of the variables,
+    stores their memory addresses in the pointers, and prints out the values and memory locations.
+*/
+
+
+
+
+
+

@@ -8,7 +8,7 @@ typedef unsigned long ul;
 int main()
 {
     int i,j;
-    char c = ’x’;
+    char c = 'x';                           // Changed to single quotes 
     int *p; /*p holds address of an int */
     int *q; /*q holds address of an int */
     char *cp;
@@ -22,7 +22,7 @@ int main()
     if ( *p == *q ) /* same as if ( i == j ) */
     { 
         printf("*pequals *q: values pointed to are equal\n");
-        *cp = ’t’ ; /* same as c = ’t’; */
+        *cp = 't' ; /* same as c = ’t’; */                      // Changed to single quotes
     }
 
     if ( p == q ) 
@@ -40,3 +40,8 @@ int main()
     
     return 0;
 }
+
+/*
+    Overall, this code demonstrates the manipulation of variables through pointers 
+    and the comparison of pointer values to determine if they point to the same memory location.
+*/
